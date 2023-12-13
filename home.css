@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    ---bgcolor: rgb(235, 226, 228);
+   ---topiccolor: rgb(247, 43, 131);
+   ---contentcolor: rgb(153, 72, 86);
+   ---subtitlecolor: #1f2937;
+   ---btnhovercolor: rgb(131, 0, 55);
+   ---btncolor: white;
+   ---subtopiccolor: silver;
+   --extra-light: #faf5ff;
+   --max-width: 1200px;   
+}
+nav {
+    background-color: var(---topiccolor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    color: var(--extra-light);
+}
+nav h1 {
+    font-size: 30px;
+}
+nav h1:hover{
+    color: var(--extra-light);
+    transform: rotate(5deg);
+}
+nav h1 i:hover{
+    color: var(---btnhovercolor);
+    transform: rotate(5deg);
+}
+.subMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;  
+    transition: left 0.3s;
+}
+.subMenu a {
+    /* font-size: 20px; */
+    text-decoration: none;
+    /* background-color: aquamarine; */
+    padding: 10px 15px;
+    /* border-radius: 10px; */
+    /* transition: all 0.5s; */
+    cursor: pointer;
+    color: var(---subtitlecolor);
+    letter-spacing: 5px;
+    border: 2px solid transparent;
+    font-weight: 600;
+    font-size: 1.2rem;
+   
+    transition: 0.3s;
+}
+.subMenu a i{
+    font-size: 20px;
+    text-decoration: none;
+    /* background-color: aquamarine; */
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    color: var(---subtitlecolor);
+}
+.subMenu a:hover {
+    
+        border-top-color: var(--extra-light);
+        border-bottom-color: var(--extra-light);
+        color: var(--extra-light);
+}
+.subMenu a i:hover {
+    
+    border-top-color: var(--extra-light);
+    border-bottom-color: var(--extra-light);
+    color: var(--extra-light);
+}
+.menuIcon {
+    font-size: 25px;
+}
+/* nav input:hover~.subMenu{
+    background-color: black;
+} */
+nav input:checked~.subMenu {
+    /* background-color: #53dc14; */
+    right: 0;
+   
+}
+
+nav input, nav .menuIcon {
+ display: none;
+}
+@media screen and (max-width:1241px) {
+    .subMenu {
+        position: fixed;
+        background-color: var(---topiccolor);
+        right: -100%;
+        
+        top: 64px;
+        height: 90vh;
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+        padding: 70px 0px 0px;
+        color: var(---subtitlecolor);
+    }
+    .subMenu a  {
+        font-size: 25px;
+    }
+    nav .menuIcon {
+        display: inline;
+    }
+}
+
+
+/* home page */
